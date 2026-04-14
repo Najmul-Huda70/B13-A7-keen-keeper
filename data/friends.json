@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Arif Ahmed",
+    "picture": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&fit=crop",
+    "email": "arif.ahmed@email.com",
+    "days_since_contact": 25,
+    "status": "overdue",
+    "tags": ["High School"],
+    "bio": "Childhood friend. We usually play Valorant on weekends.",
+    "goal": 14,
+    "next_due_date": "2026-04-05"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Jenkins",
+    "picture": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&fit=crop",
+    "email": "s.jenkins@workplace.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["Colleague", "Tech"],
+    "bio": "Senior Dev at the previous firm. Great mentor for system design.",
+    "goal": 30,
+    "next_due_date": "2026-05-10"
+  },
+  {
+    "id": 3,
+    "name": "Tanvir Hossain",
+    "picture": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&fit=crop",
+    "email": "tanvir.h@university.edu",
+    "days_since_contact": 12,
+    "status": "almost due",
+    "tags": ["University", "Close Friend"],
+    "bio": "Project partner from CS department. Loves exploring new cafes.",
+    "goal": 14,
+    "next_due_date": "2026-04-18"
+  },
+  {
+    "id": 4,
+    "name": "Maliha Zaman",
+    "picture": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&fit=crop",
+    "email": "maliha.z@lifestyle.com",
+    "days_since_contact": 45,
+    "status": "overdue",
+    "tags": ["Cousin", "Family"],
+    "bio": "Always forget to reply to her texts. Need to catch up on family news.",
+    "goal": 21,
+    "next_due_date": "2026-03-20"
+  },
+  {
+    "id": 5,
+    "name": "David Miller",
+    "picture": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&fit=crop",
+    "email": "david.m@gymbuddy.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": ["Fitness", "Gym"],
+    "bio": "Spotter at the gym. Discusses keto diets and heavy lifting.",
+    "goal": 7,
+    "next_due_date": "2026-04-19"
+  },
+  {
+    "id": 6,
+    "name": "Nusrat Jahan",
+    "picture": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&h=200&fit=crop",
+    "email": "nusrat.art@gallery.com",
+    "days_since_contact": 28,
+    "status": "almost due",
+    "tags": ["Art", "Travel"],
+    "bio": "Met during the Europe tour. She is a talented watercolor artist.",
+    "goal": 30,
+    "next_due_date": "2026-04-16"
+  },
+  {
+    "id": 7,
+    "name": "Kevin Zhang",
+    "picture": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&h=200&fit=crop",
+    "email": "kevin.z@startup.io",
+    "days_since_contact": 15,
+    "status": "overdue",
+    "tags": ["Networking", "Business"],
+    "bio": "Founder of a fintech startup. Met at a networking event.",
+    "goal": 14,
+    "next_due_date": "2026-04-13"
+  },
+  {
+    "id": 8,
+    "name": "Elena Rodriguez",
+    "picture": "https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=200&h=200&fit=crop",
+    "email": "elena.r@music.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["Music", "Close Friend"],
+    "bio": "Guitarist. We exchange Spotify playlists every week.",
+    "goal": 7,
+    "next_due_date": "2026-04-16"
+  },
+  {
+    "id": 9,
+    "name": "Rahat Karim",
+    "picture": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200&h=200&fit=crop",
+    "email": "rahat.k@photography.net",
+    "days_since_contact": 100,
+    "status": "overdue",
+    "tags": ["Photography", "Old Friend"],
+    "bio": "We used to take photos around Old Dhaka together.",
+    "goal": 60,
+    "next_due_date": "2026-02-10"
+  },
+  {
+    "id": 10,
+    "name": "Sophia Bennett",
+    "picture": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=200&h=200&fit=crop",
+    "email": "sophia.b@books.org",
+    "days_since_contact": 12,
+    "status": "on-track",
+    "tags": ["Book Club", "Literature"],
+    "bio": "Currently reading 'The Silent Patient'. Highly intellectual.",
+    "goal": 20,
+    "next_due_date": "2026-04-22"
+  }
+]

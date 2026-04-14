@@ -1,9 +1,91 @@
-import Image from "next/image";
-
+import { Plus } from "lucide-react";
+import friends from "@/data/friends.json";
+// import Image from "next/image";
+type Status = "overdue" | "almost due" | "on-track";
+const status_color: Record<Status, string> = {
+  overdue: "bg-[#EFAD44]",
+  "almost due": "bg-[#EF4444]",
+  "on-track": "bg-[#244D3F]",
+};
+//Total Friends, On Track , Need Attention, Interactions This Month
 export default function Home() {
+  const statsData = [
+    { value: friends.length, label: "Total Friends" },
+    { value: 3, label: "On Track" },
+    { value: 6, label: "Need Attention" },
+    { value: 12, label: "Interactions This Month" },
+  ];
   return (
-    <>
-    <p>start my journey</p>
-    </>
+    <div className="container mx-auto">
+      <div className="flex flex-col items-center justify-center py-20">
+        <h1 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
+          Friends to keep close in your life
+        </h1>
+
+        <p className="text-slate-500 text-s text-center m md:text-base max-w-lg mb-8 leading-relaxed">
+          Your personal shelf of meaningful connections. Browse, tend, and
+          nurture the relationships that matter most.
+        </p>
+
+        {/* Add Friend Button */}
+        <button className="flex items-center gap-2 bg-[#1e4636] hover:bg-[#153327] text-white px-6 py-3 rounded-md transition-all font-medium text-sm">
+          <Plus size={18} />
+          Add a Friend
+        </button>
+      </div>
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 p-6 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {statsData.map((stat) => (
+          <div
+            key={stat.label}
+            className="bg-white border border-gray-100 rounded-2xl p-8 flex flex-col items-center justify-center shadow-[0_2px_12px_rgba(0,0,0,0.03)] text-center transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)]"
+          >
+            <span className="text-5xl md:text-6xl font-extrabold text-[#113e2b] mb-3 tracking-tight">
+              {stat.value}
+            </span>
+            <p className="text-slate-500 text-sm md:text-base font-medium leading-relaxed">
+              {stat.label}
+            </p>
+          </div>
+        ))}
+      </div>
+      <div className="text-[#1F2937]">
+        {/* your friends */}
+        <h3 className="text-2xl font-semibold">Your Friends</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between items-center m-4 gap-6">
+          {friends.map((friend) => (
+            <div
+              key={friend.id}
+              className="bg-white flex justify-center items-center rounded-lg shadow-sm hover:shadow-md shadow-gray-300 p-6"
+            >
+              <div className="text-center space-y-4">
+                {/* <Image width={200} height={300} src={friend.picture} /> */}
+                <h3 className="text-xl font-bold">{friend.name} </h3>
+                <p className="text-[#64748B]">
+                  {friend.days_since_contact}d ago
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {friend.tags.map((tag, index) => (
+                    <div
+                      key={index}
+                      className="rounded-full px-3 text-sm py-1 bg-[#CBFADB]"
+                    >
+                      {tag}
+                    </div>
+                  ))}
+                </div>
+                <div
+                  className={`rounded-full px-2 text-sm py-1 text-white ${
+                    status_color[friend.status as Status]
+                  }`}
+                >
+                  {friend.status}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
