@@ -1,14 +1,13 @@
 import { Plus } from "lucide-react";
 import friends from "@/data/friends.json";
-// import Image from "next/image";
-type Status = "overdue" | "almost due" | "on-track";
-const status_color: Record<Status, string> = {
-  overdue: "bg-[#EFAD44]",
-  "almost due": "bg-[#EF4444]",
-  "on-track": "bg-[#244D3F]",
+import Image from "next/image";
+import Link from "next/link";
+const status_color = (Status: string) => {
+  if (Status === "overdue") return "bg-[#EFAD44]";
+  else if (Status === "almost due") return "bg-[#EF4444]";
+  else return "bg-[#244D3F]";
 };
-//Total Friends, On Track , Need Attention, Interactions This Month
-export default function Home() {
+export default function Main() {
   const statsData = [
     { value: friends.length, label: "Total Friends" },
     { value: 3, label: "On Track" },
@@ -40,7 +39,7 @@ export default function Home() {
             key={stat.label}
             className="bg-white border border-gray-100 rounded-2xl p-8 flex flex-col items-center justify-center shadow-[0_2px_12px_rgba(0,0,0,0.03)] text-center transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)]"
           >
-            <span className="text-5xl md:text-6xl font-extrabold text-[#113e2b] mb-3 tracking-tight">
+            <span className="text-5xl md:text-6xl font-extrabold text-[#113e2b] mb-3">
               {stat.value}
             </span>
             <p className="text-slate-500 text-sm md:text-base font-medium leading-relaxed">
@@ -54,12 +53,21 @@ export default function Home() {
         <h3 className="text-2xl font-semibold">Your Friends</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between items-center m-4 gap-6">
           {friends.map((friend) => (
-            <div
+            <Link
               key={friend.id}
-              className="bg-white flex justify-center items-center rounded-lg shadow-sm hover:shadow-md shadow-gray-300 p-6"
+              href={`/${friend.id}`}
+              className="bg-white flex justify-center items-center rounded-lg shadow-sm hover:shadow-md shadow-gray-300 py-8  transition-all hover:-translate-y-1 duration-800 ease-in-out cursor-pointer"
             >
-              <div className="text-center space-y-4">
-                {/* <Image width={200} height={300} src={friend.picture} /> */}
+              <div className="text-center space-y-2 flex flex-col justify-center items-center">
+                <div className="relative w-24 h-24 overflow-hidden border-2 border-slate-100 shadow-inner rounded-full mb-6">
+                  <Image
+                    src={friend.picture}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-full"
+                    alt={friend.name}
+                  />
+                </div>
                 <h3 className="text-xl font-bold">{friend.name} </h3>
                 <p className="text-[#64748B]">
                   {friend.days_since_contact}d ago
@@ -75,14 +83,12 @@ export default function Home() {
                   ))}
                 </div>
                 <div
-                  className={`rounded-full px-2 text-sm py-1 text-white ${
-                    status_color[friend.status as Status]
-                  }`}
+                  className={`font-semibold rounded-full px-4 text-sm py-1 max-w-26 text-bold text-white ${status_color(friend.status as string)}`}
                 >
                   {friend.status}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
