@@ -1,7 +1,8 @@
-import { Plus } from "lucide-react";
+import { Divide, Plus } from "lucide-react";
 import friends from "@/data/friends.json";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 
 const status_color = (Status: string) => {
   if (Status === "overdue") return "bg-[#EFAD44]";
@@ -52,46 +53,54 @@ export default function Main() {
       <div className="text-[#1F2937]">
         {/* your friends */}
         <h3 className="text-2xl font-semibold">Your Friends</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between items-center m-4 gap-6">
-          {friends.map((friend) => (
-            <Link
-              key={friend.id}
-              href={`/${friend.id}`}
-              className="bg-white flex justify-center items-center rounded-lg shadow-sm hover:shadow-md shadow-gray-300 py-8  transition-all hover:-translate-y-1 duration-800 ease-in-out cursor-pointer"
-            >
-              <div className="text-center space-y-2 flex flex-col justify-center items-center">
-                <div className="relative w-24 h-24 overflow-hidden border-2 border-slate-100 shadow-inner rounded-full mb-6">
-                  <Image
-                    src={friend.picture}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-full"
-                    alt={friend.name}
-                  />
+        <Suspense
+          fallback={
+            <div className="flex justify-center items-center">
+              <div className="w-10 h-10 border-4 border-t-blue-500 border-gray-300 rounded-full animate-spin"></div>
+            </div>
+          }
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between items-center m-4 gap-6">
+            {friends.map((friend) => (
+              <Link
+                key={friend.id}
+                href={`/${friend.id}`}
+                className="bg-white flex justify-center items-center rounded-lg shadow-sm hover:shadow-md shadow-gray-300 py-8  transition-all hover:-translate-y-1 duration-800 ease-in-out cursor-pointer"
+              >
+                <div className="text-center space-y-2 flex flex-col justify-center items-center">
+                  <div className="relative w-24 h-24 overflow-hidden border-2 border-slate-100 shadow-inner rounded-full mb-6">
+                    <Image
+                      src={friend.picture}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-full"
+                      alt={friend.name}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold">{friend.name} </h3>
+                  <p className="text-[#64748B]">
+                    {friend.days_since_contact}d ago
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {friend.tags.map((tag, index) => (
+                      <div
+                        key={index}
+                        className="rounded-full px-3 text-sm py-1 bg-[#CBFADB]"
+                      >
+                        {tag}
+                      </div>
+                    ))}
+                  </div>
+                  <div
+                    className={`font-semibold rounded-full px-4 text-sm py-1 max-w-26 text-bold text-white ${status_color(friend.status as string)}`}
+                  >
+                    {friend.status}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold">{friend.name} </h3>
-                <p className="text-[#64748B]">
-                  {friend.days_since_contact}d ago
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  {friend.tags.map((tag, index) => (
-                    <div
-                      key={index}
-                      className="rounded-full px-3 text-sm py-1 bg-[#CBFADB]"
-                    >
-                      {tag}
-                    </div>
-                  ))}
-                </div>
-                <div
-                  className={`font-semibold rounded-full px-4 text-sm py-1 max-w-26 text-bold text-white ${status_color(friend.status as string)}`}
-                >
-                  {friend.status}
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+              </Link>
+            ))}
+          </div>
+        </Suspense>
       </div>
     </div>
   );

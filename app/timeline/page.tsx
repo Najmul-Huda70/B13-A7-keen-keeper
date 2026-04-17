@@ -29,29 +29,33 @@ export default function Timeline() {
     <>
       <div className="my-8 w-10/12 mx-auto space-y-3">
         <h1 className="text-3xl font-semibold">Timeline </h1>
-        <div className="flex flex-col gap-1 w-56">
-          <label
-            htmlFor="timelineFilter"
-            className="text-md font-medium text-gray-700"
-          >
-            Filter timeline
-          </label>
+        {data.length > 0 && (
+          <>
+            <div className="flex flex-col gap-1 w-56">
+              <label
+                htmlFor="timelineFilter"
+                className="text-md font-medium text-gray-700"
+              >
+                Filter timeline
+              </label>
 
-          <select
-            id="timelineFilter"
-            name="timelineFilter"
-            defaultValue={filterTimline}
-            onChange={(e) => setTimeline(e.currentTarget.value)}
-            className="px-3 py-2 border border-gray-300 rounded-lg bg-white text-sm
+              <select
+                id="timelineFilter"
+                name="timelineFilter"
+                defaultValue={filterTimline}
+                onChange={(e) => setTimeline(e.currentTarget.value)}
+                className="px-3 py-2 border border-gray-300 rounded-lg bg-white text-sm
            focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500
            transition"
-          >
-            <option value="all">All</option>
-            <option value="call">Call</option>
-            <option value="text">Text</option>
-            <option value="video">Video</option>
-          </select>
-        </div>
+              >
+                <option value="all">All</option>
+                <option value="call">Call</option>
+                <option value="text">Text</option>
+                <option value="video">Video</option>
+              </select>
+            </div>
+          </>
+        )}
         {data.length > 0 &&
           filterData.map((item, index: number) => (
             <div
@@ -72,6 +76,17 @@ export default function Timeline() {
               </div>
             </div>
           ))}
+        {data.length === 0 && (
+          <div className="w-full flex flex-col items-center justify-center p-10 bg-white border-2 border-dashed border-gray-200 rounded-2xl transition-all hover:border-gray-300">
+            <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center mb-4 relative">
+              <span className="text-4xl animate-pulse">📅</span>
+            </div>
+
+            <h3 className="text-xl font-bold text-gray-800 mb-2">
+              No Timeline Yet
+            </h3>
+          </div>
+        )}
       </div>
     </>
   );
