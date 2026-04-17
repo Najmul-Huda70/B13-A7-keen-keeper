@@ -34,7 +34,7 @@ export default function RootLayout({
         <TimelineData>
           <Navbar />
           <div className="bg-[#f8fafc]">{children}</div>
-          <Toaster position="top-right" reverseOrder={false} />
+          <Toaster position="top-center" reverseOrder={false} />
           <Footer />
         </TimelineData>
       </body>

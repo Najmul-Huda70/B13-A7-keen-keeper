@@ -1,10 +1,10 @@
 "use client";
-
 import React from "react";
 import { MdAddCall, MdOutlineTextsms } from "react-icons/md";
 import { FiVideo } from "react-icons/fi";
 import { useTimelineData } from "./TimeLineData";
 import toast from "react-hot-toast";
+import NotFound from "@/app/not-found";
 
 const contactData = [
   {
@@ -47,7 +47,7 @@ export default function QuickCheckIn({ friend }: { friend: friendType }) {
   const context = useTimelineData();
 
   if (!context) {
-    return <div>Loading or Provider missing...</div>;
+    return <NotFound />;
   }
   const { setData } = context;
 

@@ -7,6 +7,7 @@ import QuickCheckIn from "@/component/QuickCheckIn";
 import { FaRegBell } from "react-icons/fa";
 import { GoArchive } from "react-icons/go";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { notFound } from "next/navigation";
 type friendType = {
   id: number;
   name: string;
@@ -27,7 +28,12 @@ const status_color = (Status: string) => {
 export default function FriendDetails() {
   const pathname: string = usePathname();
   const ID = pathname.split("/").pop();
-  const friend = friends.find((fr) => fr.id === Number(ID));
+  const idNumber = Number(ID);
+  const friend = friends.find((fr) => fr.id === idNumber);
+  if (isNaN(idNumber) || idNumber <= 0 || idNumber > 10) {
+    console.log("pathname: ", pathname);
+    notFound();
+  }
   const statsData = [
     { value: friend?.days_since_contact, label: "Days Since Contact" },
     { value: friend?.goal, label: "Goal (Days)" },

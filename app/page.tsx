@@ -2,6 +2,7 @@ import { Plus } from "lucide-react";
 import friends from "@/data/friends.json";
 import Image from "next/image";
 import Link from "next/link";
+
 const status_color = (Status: string) => {
   if (Status === "overdue") return "bg-[#EFAD44]";
   else if (Status === "almost due") return "bg-[#EF4444]";

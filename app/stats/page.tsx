@@ -32,48 +32,50 @@ export default function Stats({
   ];
   const COLORS = ["#8b5cf6", "#1f2937", "#22c55e"];
   return (
-    <div className="w-8/12 my-2 sm:my-5 mx-auto">
-      <h1 className="text-3xl font-semibold">Friendship Analytics</h1>
-      <div className="w-full max-h-100.5 my-8 bg-white rounded-xl p-4">
-        <p className="text-xl font-semibold text-gray-600">
-          By Interaction Type
-        </p>
-        <div className="flex justify-center items-center">
-          <PieChart
-            style={{
-              width: "100%",
-              maxWidth: "500px",
-              maxHeight: "50vh",
-              aspectRatio: 1,
-            }}
-            responsive
-          >
-            <Pie
-              data={chartData}
-              innerRadius="80%"
-              outerRadius="100%"
-              cornerRadius="50%"
-              paddingAngle={5}
-              dataKey="value"
-              isAnimationActive={isAnimationActive}
+    <>
+      <div className="w-8/12 my-2 sm:my-5 mx-auto">
+        <h1 className="text-3xl font-semibold">Friendship Analytics</h1>
+        <div className="w-full max-h-100.5 my-8 bg-white rounded-xl p-4">
+          <p className="text-xl font-semibold text-gray-600">
+            By Interaction Type
+          </p>
+          <div className="flex justify-center items-center">
+            <PieChart
+              style={{
+                width: "100%",
+                maxWidth: "500px",
+                maxHeight: "50vh",
+                aspectRatio: 1,
+              }}
+              responsive
             >
-              {chartData.map((_, index) => (
-                <Cell key={index} fill={COLORS[index]} />
-              ))}
-              <LabelList
+              <Pie
+                data={chartData}
+                innerRadius="80%"
+                outerRadius="100%"
+                cornerRadius="50%"
+                paddingAngle={5}
                 dataKey="value"
-                position="inside"
-                fill="#fff"
-                fontSize={12}
-                formatter={(value) => `${value}`}
-              />
-            </Pie>
-            <RechartsDevtools />
-            <Tooltip />
-            <Legend />
-          </PieChart>
+                isAnimationActive={isAnimationActive}
+              >
+                {chartData.map((_, index) => (
+                  <Cell key={index} fill={COLORS[index]} />
+                ))}
+                <LabelList
+                  dataKey="value"
+                  position="inside"
+                  fill="#fff"
+                  fontSize={12}
+                  formatter={(value) => `${value}`}
+                />
+              </Pie>
+              <RechartsDevtools />
+              <Tooltip />
+              <Legend />
+            </PieChart>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
