@@ -27,7 +27,7 @@ export default function Timeline() {
   });
   return (
     <>
-      <div className="my-8 container mx-auto space-y-3">
+      <div className="my-8 w-10/12 mx-auto space-y-3">
         <h1 className="text-3xl font-semibold">Timeline </h1>
         <div className="flex flex-col gap-1 w-56">
           <label

@@ -35,8 +35,8 @@ export default function FriendDetails() {
   ];
 
   return (
-    <div className="w-11/12 my-10 mx-auto flex justify-center items-center gap-5">
-      <div className="w-2/7">
+    <div className="w-11/12 my-10 mx-auto flex flex-col lg:flex-row justify-center items-center gap-5">
+      <div className="w-2/7 flex flex-col justify-center items-center">
         {/* profile */}
         <div className="text-center space-y-2 flex flex-col justify-center items-center h-80 bg-white py-4 min-w-70 rounded-lg shadow-sm transition-all duration-1000 hover:shadow-md">
           <div className="relative w-24 h-24 overflow-hidden border-2 border-slate-100 shadow-inner rounded-full mb-1">
@@ -70,20 +70,20 @@ export default function FriendDetails() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 mt-5">
-          <div className="bg-white w-full p-2 rounded-md shadow flex justify-center items-center gap-2">
+        <div className="flex w-full flex-col gap-4 mt-5">
+          <div className="bg-white p-2 rounded-md shadow flex justify-center items-center gap-2">
             <FaRegBell /> Snooze 2 weeks
           </div>
-          <div className="bg-white w-full p-2 rounded-md shadow flex justify-center items-center gap-2">
+          <div className="bg-white p-2 rounded-md shadow flex justify-center items-center gap-2">
             <GoArchive /> Archive
           </div>
-          <div className="bg-white w-full p-2 text-red-600 rounded-md shadow flex justify-center items-center gap-2">
+          <div className="bg-white p-2 text-red-600 rounded-md shadow flex justify-center items-center gap-2">
             <RiDeleteBin6Line /> Delete
           </div>
         </div>
       </div>
       <div className="w-5/7">
-        <div className="flex flex-col relative h-80">
+        <div className="flex flex-col relative h-140 sm:h-110 md:h-80">
           <div className="abosulte top-0  left-0 right-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {statsData.map((stat, index) => (
               <div

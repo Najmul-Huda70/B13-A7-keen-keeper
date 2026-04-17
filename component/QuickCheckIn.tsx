@@ -70,12 +70,12 @@ export default function QuickCheckIn({ friend }: { friend: friendType }) {
   };
 
   return (
-    <div className="flex justify-between items-center gap-5">
+    <div className="flex flex-col sm:flex-row justify-between items-center gap-5">
       {contactData.map((item, index) => (
         <button
           key={index}
           onClick={() => addTimeline(item.contact)}
-          className="flex-1 border py-4 cursor-pointer rounded-lg border-gray-300 flex flex-col justify-center items-center bg-gray-100 hover:bg-gray-50 transition-colors"
+          className="flex-1 w-full border py-4 cursor-pointer rounded-lg border-gray-300 flex flex-col justify-center items-center bg-gray-100 hover:bg-gray-50 transition-colors"
         >
           <div className={`${item.iconColor} text-xl`}>{item.icon}</div>
           <p>{item.contact}</p>

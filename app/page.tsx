@@ -15,9 +15,9 @@ export default function Main() {
     { value: 12, label: "Interactions This Month" },
   ];
   return (
-    <div className="container mx-auto">
+    <div className="w-11/12 mx-auto">
       <div className="flex flex-col items-center justify-center py-20">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
+        <h1 className="text-4xl text-center md:text-5xl font-bold text-[#1e293b] mb-4">
           Friends to keep close in your life
         </h1>
 

@@ -14,12 +14,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="flex items-center justify-between px-8 py-4 border-b border-gray-100 bg-white">
+    <nav className="flex items-center justify-between px-2 sm:px-8 py-4 border-b border-gray-100 bg-white">
       <div className="flex items-center gap-1">
         <span className="text-xl font-bold text-[#1a2e35]">Keen</span>
         <span className="text-xl font-bold text-[#2d5a4c]">Keeper</span>
       </div>
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-3 sm:gap-6">
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
 
@@ -27,14 +27,16 @@ const Navbar = () => {
             <Link
               key={link.name}
               href={link.href}
-              className={`flex items-center gap-2 px-4 py-2 rounded-md transition-colors ${
+              className={`flex items-center px-2 py-1 sm:gap-2 sm:px-4 sm:py-2 rounded-md transition-colors ${
                 isActive
                   ? "bg-[#2d4a3e] text-white"
                   : "text-slate-500 hover:text-slate-800"
               }`}
             >
               {link.icon}
-              <span className="text-sm font-medium">{link.name}</span>
+              <span className="hidden  sm:flex sm:text-sm sm:font-medium">
+                {link.name}
+              </span>
             </Link>
           );
         })}
