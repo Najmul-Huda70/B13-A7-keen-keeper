@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Keen Keeper 
 
-## Getting Started
+## Description
+In today's busy world, maintaining consistent contact with friends can be challenging. **Keen Keeper** acts as a personal CRM (Customer Relationship Manager) for your social life. It allows users to view their friends' contact status (on-track, almost due, or overdue), see detailed personal stats, and log quick check-ins like calls, texts, or video chats. The app features a dynamic timeline to track history and a stats page for interaction analytics.
 
-First, run the development server:
+## Live Demo
+[Live Site Link Here](https://keen-keeper-indol-five.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technologies Used
+* **Framework:** [Next.js](https://nextjs.org/) (App Router)
+* **Language:** [TypeScript](https://www.typescript.lang/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+* **Charts:** [Recharts](https://recharts.org/)
+* **Notifications:** [React Hot Toast](https://react-hot-toast.com/)
+* **Deployment:** [Vercel](https://vercel.com/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1.Home Page
+- **Dynamic Cards:** Displays all friends from a JSON source with real-time status tracking.
+- **Status Indicators:** Background colors change dynamically based on whether a friend is `on-track`, `almost due`, or `overdue`.
+- **Responsive Grid:** A fully responsive 4-column layout that adapts perfectly to mobile, tablet, and desktop screens.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 2. Timeline
+- **Quick Check-In:** Log a Call, Text, or Video chat with a single click from the Friend Details page.
+- **Automated Timeline:** Every check-in is automatically recorded with the date and interaction type.
+- **Filtering:** A dedicated Timeline page with filtering options to sort history by Call, Text, or Video.
 
-## Learn More
+### 3. Friendship Analytics
+- **Visual Data:** A dedicated Stats page featuring a **Pie Chart** (via Recharts) that breaks down your total interaction types.
+- **Personalized Stats:** Individual friend detail pages show "Days Since Contact," "Contact Goals," and "Next Due Date."
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Installation & Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Najmul-Huda70/B13-A7-keen-keeper.git](https://github.com/Najmul-Huda70/B13-A7-keen-keeper.git)
