@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/component/Navbar";
 import Footer from "@/component/Footer";
 import TimelineData from "@/component/TimeLineData";
+import { Toaster } from "react-hot-toast";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
         <TimelineData>
           <Navbar />
           <div className="bg-[#f8fafc]">{children}</div>
+          <Toaster position="top-right" reverseOrder={false} />
           <Footer />
         </TimelineData>
       </body>

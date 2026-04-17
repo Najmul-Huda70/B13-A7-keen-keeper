@@ -1,8 +1,8 @@
 "use client";
 import { createContext, useContext, useState } from "react";
-
+type QuickCheckIn = "Call" | "Text" | "Video";
 type Timeline = {
-  QuickCheckIn?: string;
+  QuickCheckIn?: QuickCheckIn;
   name?: string;
   date?: string;
 };

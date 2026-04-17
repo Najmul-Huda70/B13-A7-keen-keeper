@@ -9,7 +9,7 @@
     "tags": ["High School"],
     "bio": "Childhood friend. We usually play Valorant on weekends.",
     "goal": 14,
-    "next_due_date": "2026-04-05"
+    "next_due_date": "April 5, 2026"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "tags": ["Colleague", "Tech"],
     "bio": "Senior Dev at the previous firm. Great mentor for system design.",
     "goal": 30,
-    "next_due_date": "2026-05-10"
+    "next_due_date": "May 10, 2026"
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "tags": ["University", "Close Friend"],
     "bio": "Project partner from CS department. Loves exploring new cafes.",
     "goal": 14,
-    "next_due_date": "2026-04-18"
+    "next_due_date": "April 18, 2026"
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@
     "tags": ["Cousin", "Family"],
     "bio": "Always forget to reply to her texts. Need to catch up on family news.",
     "goal": 21,
-    "next_due_date": "2026-03-20"
+    "next_due_date": "March 20, 2026"
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@
     "tags": ["Fitness", "Gym"],
     "bio": "Spotter at the gym. Discusses keto diets and heavy lifting.",
     "goal": 7,
-    "next_due_date": "2026-04-19"
+    "next_due_date": "April 19, 2026"
   },
   {
     "id": 6,
@@ -69,7 +69,7 @@
     "tags": ["Art", "Travel"],
     "bio": "Met during the Europe tour. She is a talented watercolor artist.",
     "goal": 30,
-    "next_due_date": "2026-04-16"
+    "next_due_date": "April 16, 2026"
   },
   {
     "id": 7,
@@ -81,7 +81,7 @@
     "tags": ["Networking", "Business"],
     "bio": "Founder of a fintech startup. Met at a networking event.",
     "goal": 14,
-    "next_due_date": "2026-04-13"
+    "next_due_date": "April 13, 2026"
   },
   {
     "id": 8,
@@ -93,7 +93,7 @@
     "tags": ["Music", "Close Friend"],
     "bio": "Guitarist. We exchange Spotify playlists every week.",
     "goal": 7,
-    "next_due_date": "2026-04-16"
+    "next_due_date": "April 16, 2026"
   },
   {
     "id": 9,
@@ -105,7 +105,7 @@
     "tags": ["Photography", "Old Friend"],
     "bio": "We used to take photos around Old Dhaka together.",
     "goal": 60,
-    "next_due_date": "2026-02-10"
+    "next_due_date": "February 10, 2026"
   },
   {
     "id": 10,
@@ -117,6 +117,6 @@
     "tags": ["Book Club", "Literature"],
     "bio": "Currently reading 'The Silent Patient'. Highly intellectual.",
     "goal": 20,
-    "next_due_date": "2026-04-22"
+    "next_due_date": "April 22, 2026"
   }
 ]
