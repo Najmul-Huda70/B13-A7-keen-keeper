@@ -15,11 +15,15 @@ const iconColor = (status: string) => {
   else if (status === "Video") return "";
 };
 export default function Timeline() {
-  const { data, setData } = useTimelineData();
+  const context = useTimelineData();
+  if (!context) {
+    return <div>Loading or Provider missing...</div>;
+  }
+  const { data } = context;
   const [filterTimline, setTimeline] = useState("all");
   const filterData = data.filter((item) => {
     if (filterTimline === "all") return true;
-    return item.QuickCheckIn.toLowerCase() === filterTimline;
+    return item.QuickCheckIn?.toLowerCase() === filterTimline;
   });
   return (
     <>
@@ -55,9 +59,9 @@ export default function Timeline() {
               className="flex gap-2 hover:bg-gray-100 bg-white p-3 rounded-lg"
             >
               <div
-                className={`flex justify-center items-center text-2xl ${iconColor(item.QuickCheckIn)}`}
+                className={`flex justify-center items-center text-2xl ${iconColor(item.QuickCheckIn ?? "")}`}
               >
-                {icon(item.QuickCheckIn)}
+                {icon(item.QuickCheckIn ?? "")}
               </div>
               <div className="text-gray-700">
                 <p>

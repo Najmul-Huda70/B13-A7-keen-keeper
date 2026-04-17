@@ -7,6 +7,18 @@ import QuickCheckIn from "@/component/QuickCheckIn";
 import { FaRegBell } from "react-icons/fa";
 import { GoArchive } from "react-icons/go";
 import { RiDeleteBin6Line } from "react-icons/ri";
+type friendType = {
+  id: number;
+  name: string;
+  picture: string;
+  email: string;
+  days_since_contact: number;
+  status: string;
+  tags: string[];
+  bio: string;
+  goal: number;
+  next_due_date: string;
+};
 const status_color = (Status: string) => {
   if (Status === "overdue") return "bg-[#EFAD44]";
   else if (Status === "almost due") return "bg-[#EF4444]";
@@ -103,7 +115,7 @@ export default function FriendDetails() {
         </div>
         <div className="w-full bg-white mt-5 p-6 rounded-lg">
           <h3 className="mb-3">Quick Check-In</h3>
-          <QuickCheckIn friend={friend}></QuickCheckIn>
+          <QuickCheckIn friend={friend as friendType}></QuickCheckIn>
         </div>
       </div>
     </div>

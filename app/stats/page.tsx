@@ -8,7 +8,11 @@ export default function Stats({
 }: {
   isAnimationActive?: boolean;
 }) {
-  const { data, setData } = useTimelineData();
+  const context = useTimelineData();
+  if (!context) {
+    return <div>Loading or Provider missing...</div>;
+  }
+  const { data } = context;
   let call: number = 0,
     text: number = 0,
     video: number = 0;
