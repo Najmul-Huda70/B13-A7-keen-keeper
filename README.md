@@ -7,7 +7,7 @@ In today's busy world, maintaining consistent contact with friends can be challe
 [Live Site Link Here](https://keen-keeper-indol-five.vercel.app)
 
 ## Technologies Used
-* **Framework:** [Next.js](https://nextjs.org/) (App Router)
+* **Framework:** [Next.js](https://nextjs.org/) 
 * **Language:** [TypeScript](https://www.typescript.lang/)
 * **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 * **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
